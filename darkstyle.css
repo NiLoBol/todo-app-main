@@ -1,0 +1,10 @@
+.text-center-flex{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+body{
+    background: #000;
+}

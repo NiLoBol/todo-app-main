@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link id="style" rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <title>Frontend Mentor | Todo app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="dark-mode">
+    <header>
+      <img
+        id="imgheader"
+        class="w-100 position-absolute z-0 pc"
+        src="/images/bg-desktop-light.jpg"
+        alt=""
+      />
+      <img
+        id="imgheadermobile"
+        class="w-100 position-absolute z-0 mobile"
+        src="/images/bg-mobile-light.jpg"
+        alt=""
+      />
+    </header>
+    <main>
+      <div
+        class="alert z-3 text-center-flex w33 mx-auto justify-content-between top50"
+      >
+        <h1 class="text-align-center my-auto">TODO</h1>
+        <div id="icon" class="" onclick="toggleDarkLightMode()">
+          <img src="images/icon-moon.svg" alt="" />
+        </div>
+      </div>
+      <div class="alert alert-primary w33 mx-auto top50" role="alert">
+        <div class="d-flex align-items-center">
+          <div class="checkbox-wrapper-15 me-3">
+            <input
+              class="inp-cbx"
+              id="cbxinput-0"
+              type="checkbox"
+              style="display: none"
+            />
+            <label class="cbx" for="cbxinput-0">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                  <path
+                    fill="none"
+                    stroke="#FFF"
+                    stroke-width="2"
+                    d="M1 4.304L3.696 7l6-6"
+                  />
+                </svg>
+              </span>
+            </label>
+          </div>
+          <input
+            id="todo"
+            type="text"
+            class="form-control bg-input fw700"
+            aria-label="Text input with checkbox"
+            onkeypress="if(event.keyCode === 13 || event.which === 13) Addtodo()"
+            placeholder="Creat a new todo..."
+          />
+        </div>
+      </div>
+      <div class="alert alert-primary w33 mx-auto top50" role="alert">
+        <div id="todolist"></div>
+        <hr />
+        <div class="row p-1 justify-content-between pc">
+          <div id="itemsnum" class="col-3 sub">items left</div>
+          <div id="serch" class="col-6 text row justify-content-center fw700">
+            <div onclick="serchAll()" class="col-2 text-primary">All</div>
+            <div onclick="serchActive()" class="col-3 sub">Active</div>
+            <div onclick="serchCompleted()" class="col-4 sub">Completed</div>
+          </div>
+          <div onclick="Clear()" class="col-3 sub">Clear Completed</div>
+        </div>
+
+        <div class="row p-1 justify-content-between mobile">
+          <div id="itemsnum" class="col-6 sub">items left</div>
+          <div onclick="Clear()" class="col-6 sub">Clear Completed</div>
+        </div>
+      </div>
+      <div class="alert alert-primary w33 mx-auto top50 mobile" role="alert">
+        <div class="text row justify-content-center fw700">
+          <div id="serch2" onclick="serchAll()" class="col-4 text-primary">
+            All
+          </div>
+          <div id="serch2" onclick="serchActive()" class="col-4 sub">
+            Active
+          </div>
+          <div id="serch2" onclick="serchCompleted()" class="col-4 sub">
+            Completed
+          </div>
+        </div>
+      </div>
+      <div class="alert text-center my-5 top50">
+        Drag and drop to reorder list
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
